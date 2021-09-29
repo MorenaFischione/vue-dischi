@@ -1,12 +1,16 @@
 <template>
-    <div class="container my_wrapper-album">
-        <div class="row">
-            <div class="col-12">
-                    <h1>{{title}} {{author}} </h1>
-                    <img :src="poster" alt="">
-            </div>
-        </div>
+
+    
+    <div class="align-items-center">
+        <img class="p-3 my_copertina" :src="poster" alt="">
+        <h4>{{ title }}</h4>
+        <p>{{ author }}</p>
+        <p>{{ year }}</p>
     </div>
+
+  
+   
+ 
 </template>
 
 <script>
@@ -17,19 +21,30 @@ export default {
         genre: String,
         poster: String,
         title: String,
-        year: String,
+        year: Number,
     },
 }
 </script>
 
 <style lang="scss">
-.my_wrapper-album {
-    width: 100%;
-    height: 300px;
+    @import "../style/variables.scss";
 
-    img {
-        width: 100%;
+
+    .my_copertina {
+        height: 200px;
+        object-fit: contain;
     }
-}
+
+    h4 {
+        color: $colorPrincipale;
+        font-family: $fontTitle;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    p {
+        color: $colorSecondary;
+        font-family: $fontText;
+    }
 
 </style>
