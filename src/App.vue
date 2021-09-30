@@ -4,8 +4,8 @@
       <img class="logo" src="https://cantabrialabsdifacooper.it/wp-content/uploads/2021/03/png-clipart-spotify-logo-spotify-computer-icons-podcast-music-apps-miscellaneous-angle.png" alt="">
     </div>
     <div class="d-flex justify-content-center">
-      <div v-for="(album, index) in albums" :key="index">
-          <Selection :genre="album.genre"/>
+      <div v-for="(element, index) in album" :key="index">
+          <Selection :value="album.genre"/>
       </div>
     </div>
     <div class="main">

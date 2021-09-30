@@ -1,16 +1,35 @@
 <template>
-    <div class="menu">
-        <ul>
-        <li>
-            <a href="#">{{ genre }}</a>
-        </li>
-        </ul>
-    </div>
+   <form class="p-5" v-on:submit.prevent>
+        <select name="genere" id="genere">
+          <option value="genre" @click="ricercaGenere">rock</option>
+          <option value="genre">pop</option>
+          <option value="genre">jazz</option>
+          <option value="genre">metal</option>
+        </select>
+    </form>
 </template>
 
 <script>
 export default {
     name: "Selection",
+
+    data: function(){
+        return {
+            listaGeneri: [],
+        }
+    },
+
+    methods: {
+        ricercaGenere ()  {
+            let self = this;
+            return console.log(self.value);
+        },
+
+    },
+
+    computed: {
+        
+    },
 
     props: {
         author: String,
@@ -18,6 +37,7 @@ export default {
         poster: String,
         title: String,
         year: Number,
+        
     },
 
 }
