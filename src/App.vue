@@ -3,6 +3,11 @@
     <div class="header">
       <img class="logo" src="https://cantabrialabsdifacooper.it/wp-content/uploads/2021/03/png-clipart-spotify-logo-spotify-computer-icons-podcast-music-apps-miscellaneous-angle.png" alt="">
     </div>
+    <div class="d-flex justify-content-center">
+      <div v-for="(album, index) in albums" :key="index">
+          <Selection />
+      </div>
+    </div>
     <div class="main">
       <div class="d-flex flex-wrap justify-content-evenly my_container " > 
         <div v-for="(album, index) in albums" :key="index" class="card">
@@ -17,10 +22,13 @@
 <script>
 import Product from './components/Product.vue'
 import axios from "axios";
+import Selection from "./components/Selection.vue";
+
 export default {
   name: 'App',
   components: {
     Product,
+    Selection,
   },
   data(){
     return {

@@ -1,12 +1,13 @@
 <template>
 
-    
-    <div class="align-items-center">
-        <img class="p-3 my_copertina" :src="poster" alt="">
-        <h4>{{ title }}</h4>
-        <p>{{ author }}</p>
-        <p>{{ year }}</p>
-    </div>
+    <section>
+        <div class="align-items-center">
+            <img class="p-3 my_copertina" :src="poster" alt="">
+            <h4>{{ title }}</h4>
+            <p>{{ author }}</p>
+            <p>{{ year }}</p>
+        </div>
+    </section>
 
   
    
@@ -14,8 +15,10 @@
 </template>
 
 <script>
+
 export default {
     name: "Product",
+
     props: {
         author: String,
         genre: String,
