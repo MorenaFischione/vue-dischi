@@ -5,7 +5,7 @@
     </div>
     <div class="d-flex justify-content-center">
       <div v-for="(album, index) in albums" :key="index">
-          <Selection />
+          <Selection :genre="album.genre"/>
       </div>
     </div>
     <div class="main">

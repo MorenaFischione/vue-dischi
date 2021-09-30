@@ -1,9 +1,9 @@
 <template>
     <div class="menu">
         <ul>
-            <li>
-                <a href="#">{{ genre }}</a>
-            </li>
+        <li>
+            <a href="#">{{ genre }}</a>
+        </li>
         </ul>
     </div>
 </template>
@@ -32,7 +32,7 @@ export default {
         a {
         text-decoration: none;
         color: $colorBg;
-        font-size: 1.2rem;
+        
         }
     }
 
