@@ -4,8 +4,9 @@
       <img class="logo" src="https://cantabrialabsdifacooper.it/wp-content/uploads/2021/03/png-clipart-spotify-logo-spotify-computer-icons-podcast-music-apps-miscellaneous-angle.png" alt="">
     </div>
     <div class="d-flex justify-content-center">
-      <div v-for="(element, index) in album" :key="index">
-          <Selection :value="album.genre"/>
+      <div>
+          <Selection :arrayModificato="listaGeneri()"
+          />
       </div>
     </div>
     <div class="main">
@@ -33,8 +34,10 @@ export default {
   data(){
     return {
       albums : [],
+      arrayGeneri:[],
     }
   },
+
   // Quando il DOM è pronto e inizia a d essere mostrato
   mounted(){
     axios.get("https://flynn.boolean.careers/exercises/api/array/music")
@@ -45,7 +48,23 @@ export default {
       this.albums = result.response;
       console.log(this.albums);
     });
-  }
+  },
+
+    methods: {
+        listaGeneri ()  {
+          let self = this;
+            console.log(self.albums);
+            for(let i=0; i < self.albums.length; i++){
+              console.log(self.albums[i]);
+              let genere = self.albums[i].genre;
+              console.log(genere);
+              if (!self.arrayGeneri.includes(genere)){
+                  self.arrayGeneri.push(genere);
+              }
+            } console.log(self.arrayGeneri);
+        },
+
+    },
 }
 </script>
 

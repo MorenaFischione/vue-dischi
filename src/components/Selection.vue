@@ -1,10 +1,7 @@
 <template>
    <form class="p-5" v-on:submit.prevent>
-        <select name="genere" id="genere">
-          <option value="genre" @click="ricercaGenere">rock</option>
-          <option value="genre">pop</option>
-          <option value="genre">jazz</option>
-          <option value="genre">metal</option>
+        <select name="genere" id="genere" >
+          <option value="genre" v-for="(element, indice) in arrayModificato" :key="indice">{{element}}</option>
         </select>
     </form>
 </template>
@@ -21,8 +18,7 @@ export default {
 
     methods: {
         ricercaGenere ()  {
-            let self = this;
-            return console.log(self.value);
+            
         },
 
     },
@@ -37,7 +33,7 @@ export default {
         poster: String,
         title: String,
         year: Number,
-        
+        arrayModificato: String, 
     },
 
 }
