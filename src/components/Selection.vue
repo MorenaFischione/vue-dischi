@@ -1,6 +1,6 @@
 <template>
    <form class="p-5" v-on:submit.prevent>
-        <select name="genere" id="genere" >
+        <select name="genere" id="genere">
           <option value="genre" v-for="(element, indice) in arrayModificato" :key="indice">{{element}}</option>
         </select>
     </form>

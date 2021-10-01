@@ -5,14 +5,14 @@
     </div>
     <div class="d-flex justify-content-center">
       <div>
-          <Selection :arrayModificato="listaGeneri()"
+          <Selection :arrayModificato="arrayGeneri"
           />
       </div>
     </div>
     <div class="main">
       <div class="d-flex flex-wrap justify-content-evenly my_container " > 
         <div v-for="(album, index) in albums" :key="index" class="card">
-          <Product :title="album.title" :author="album.author" :poster="album.poster"
+          <Product :title="album.title" :author="album.author" :age="album.year" :poster="album.poster" :genre="album.genre" 
           />
         </div>
       </div>
@@ -46,8 +46,7 @@ export default {
       const result = response.data;
       console.log(result.response); //oggetto dell'array
       this.albums = result.response;
-      console.log(this.albums);
-    });
+    });console.log(this.albums);
   },
 
     methods: {
